@@ -38,10 +38,16 @@ main {
 .slideInLeftCard {
   background-color: var(--cardFromLeft);
   color: whitesmoke;
+  animation-name: slideInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .slideInRightCard {
   background-color: var(--cardFromRight);
+  animation slideInFromRight 3s ease-in;
 }
 
 .rotateCard {
@@ -49,6 +55,9 @@ main {
   width: 100px;
   height: 100px;
   background-color: var(--rotate);
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
 }
 
 .hoverBtnContainer {
@@ -64,7 +73,13 @@ main {
   border-color: lightgrey;
   border-style: solid;
   box-shadow: 2px 2px 5px lightgrey;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
 }
+
+/* hover funker ikke på mobil
+ * men pseudonavnet isactive registrerer at noen long presser på mobilen
+ * */
 
 .btnColor:hover {
   background-color: #8de969;
@@ -72,4 +87,89 @@ main {
 
 .btnOpacity {
   opacity: 0.3;
+}
+
+.btnOpacity:hover {
+    opacity: 1;
+}
+
+.btnSize {
+    scale: 1;
+}
+
+.btnSize: {
+    scale: 2;
+}
+
+@keyframes slideInLeft {
+    from {
+	transform: translateX(-300px);
+    }
+
+    to {
+	transform: translateX(0px);
+    }
+
+
+}
+
+@keyframes slideInFromRight {
+    from {
+	transform: translateX(300px);
+    }
+
+    to {
+	transform: translateX(0px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+    }
+
+    50% {
+	scale: 2;
+	transform: rotate(0);
+	border-radius: 0;
+    }
+
+    100% {
+	transform: rotate(360deg);
+	scale: 2;
+    }
+}
+
+.bouncyContainer {
+    height: 800px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: end;
+}
+
+
+.bouncyball {
+    width: 300px;
+    height: 300px;
+    background-color: red;
+    border-radius: 100%;
+    animation-name: bouncingBall;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 10;
+    animation-fill-mode: both;
+}
+
+@keyframes bouncingBall {
+    0% {
+	transform: translateY(0px);
+    }
+
+    100% {
+	transform: translateY(0px)
+    }
+}
+
+.checkBox {
+    border-radius: 100%;
 }
