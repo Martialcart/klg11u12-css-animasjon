@@ -40,7 +40,7 @@ main {
   color: whitesmoke;
   animation-name: slideInLeft;
   animation-duration: 3s;
-  animation-timing-function: ease-in;
+  animation-timing-functlion: ease-in;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -140,12 +140,13 @@ main {
 }
 
 .bouncyContainer {
-    height: 800px;
+    min-height: 800px;
     border: 1px solid black;
     display: flex;
-    flex-direction: column-reverse;
-    justify-content: end;
+    flex-direction: column;
+    justify-content: flex-end;
 }
+
 
 
 .bouncyball {
@@ -153,21 +154,26 @@ main {
     height: 300px;
     background-color: red;
     border-radius: 100%;
+    transform-style: preserve-3d;
     animation-name: bouncingBall;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
-    animation-iteration-count: 10;
+    animation-iteration-count: 20;
     animation-fill-mode: both;
+    animation-direction: alternate;
+    
 }
 
 @keyframes bouncingBall {
-    0% {
-	transform: translateY(0px);
+  0% {
+    transform: translateY(0px);
+  }
+  
+  
+  100% {
+    transform: translateY(-300px);
     }
 
-    100% {
-	transform: translateY(0px)
-    }
 }
 
 .checkBox {
